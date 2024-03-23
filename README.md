@@ -1,8 +1,6 @@
 > A batteries-included Django starter project. To learn more visit [LearnDjango.com](https://learndjango.com).
 
-
 https://github.com/wsvincent/djangox/assets/766418/a73ea730-a7b4-4e53-bf51-aa68f6816d6a
-
 
 ## 🚀 Features
 
@@ -14,20 +12,23 @@ https://github.com/wsvincent/djangox/assets/766418/a73ea730-a7b4-4e53-bf51-aa68f
 - Debugging with [django-debug-toolbar](https://github.com/jazzband/django-debug-toolbar)
 - DRY forms with [django-crispy-forms](https://github.com/django-crispy-forms/django-crispy-forms)
 - Custom 404, 500, and 403 error pages
-----
+
+---
 
 ## Table of Contents
-* **[Installation](#installation)**
-  * [Pip](#pip)
-  * [Docker](#docker)
-* [Next Steps](#next-steps)
-* [Contributing](#contributing)
-* [Support](#support)
-* [License](#license)
 
-----
+- **[Installation](#installation)**
+  - [Pip](#pip)
+  - [Docker](#docker)
+- [Next Steps](#next-steps)
+- [Contributing](#contributing)
+- [Support](#support)
+- [License](#license)
+
+---
 
 ## 📖 Installation
+
 DjangoX can be installed via Pip or Docker. To start, clone the repo to your local computer and change into the proper directory.
 
 ```
@@ -56,10 +57,10 @@ $ source .venv/bin/activate
 
 ### Docker
 
-To use Docker with PostgreSQL as the database update the `DATABASES` section of `django_project/settings.py` to reflect the following:
+To use Docker with PostgreSQL as the database update the `DATABASES` section of `bedplot/settings.py` to reflect the following:
 
 ```python
-# django_project/settings.py
+# bedplot/settings.py
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
@@ -72,7 +73,7 @@ DATABASES = {
 }
 ```
 
-The `INTERNAL_IPS` configuration in `django_project/settings.py` must be also be updated:
+The `INTERNAL_IPS` configuration in `bedplot/settings.py` must be also be updated:
 
 ```python
 # config/settings.py
@@ -101,7 +102,7 @@ $ docker-compose exec web python manage.py createsuperuser
 
 I cover all of these steps in tutorials and premium courses over at [LearnDjango.com](https://learndjango.com).
 
-----
+---
 
 ## 🤝 Contributing
 
@@ -109,7 +110,7 @@ Contributions, issues and feature requests are welcome! See [CONTRIBUTING.md](ht
 
 ## ⭐️ Support
 
-Give a ⭐️  if this project helped you!
+Give a ⭐️ if this project helped you!
 
 ## License
 

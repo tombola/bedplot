@@ -48,10 +48,10 @@ MIDDLEWARE = [
 ]
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#root-urlconf
-ROOT_URLCONF = "django_project.urls"
+ROOT_URLCONF = "bedplot.urls"
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
-WSGI_APPLICATION = "django_project.wsgi.application"
+WSGI_APPLICATION = "bedplot.wsgi.application"
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#templates
 TEMPLATES = [
@@ -140,7 +140,7 @@ STORAGES = {
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/stable/ref/settings/#default-auto-field
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # django-crispy-forms
 # https://django-crispy-forms.readthedocs.io/en/latest/install.html#template-packs
