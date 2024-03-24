@@ -29,7 +29,7 @@ INSTALLED_APPS = [
     "crispy_bootstrap5",
     "debug_toolbar",
     # Local
-    "accounts",
+    "bedplot.accounts",
     "bedplot.pages",
 ]
 
