@@ -28,9 +28,11 @@ INSTALLED_APPS = [
     "crispy_forms",
     "crispy_bootstrap5",
     "debug_toolbar",
+    "django_extensions",
     # Local
     "bedplot.accounts",
     "bedplot.pages",
+    "bedplot.beds",
 ]
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#middleware
