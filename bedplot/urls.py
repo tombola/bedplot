@@ -6,6 +6,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("accounts/", include("allauth.urls")),
     path("", include("bedplot.pages.urls")),
+    path("", include("bedplot.beds.urls")),
 ]
 
 if settings.DEBUG:

@@ -1,0 +1,7 @@
+{% for bed in beds %}
+    <div>
+        <h3>{{ bed.name }}</h3>
+    </div>
+{% empty %}
+    <p>No beds found.</p>
+{% endfor %}

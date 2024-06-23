@@ -70,6 +70,9 @@ class Bed(models.Model):
 
         return planting
 
+    def __str__(self):
+        return f"{self.location}: {self.name}"
+
 
 class Planting(models.Model):
     """Model representing a bed planting."""

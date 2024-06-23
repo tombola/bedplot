@@ -1,3 +1,4 @@
 from django.contrib import admin
+from bedplot.beds.models import Bed
 
-# Register your models here.
+admin.site.register(Bed)
