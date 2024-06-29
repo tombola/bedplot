@@ -9,10 +9,28 @@ DOUBLE_ROW_ALIASES = ["left", "right"]
 TRIPLE_ROW_ALIASES = ["left", "centre", "right"]
 
 
-class Location(models.Model):
-    """Model representing a bed location."""
+class Plot(models.Model):
+    """Model representing a plot of land."""
 
     name = models.CharField(max_length=50)
+    compass_orientation = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.name
+
+
+class BedGroup(models.Model):
+    """
+    Model representing a grouping of beds.
+
+    Could be a polytunnel, greenhouse or a group of beds in one
+    orientation.
+    """
+
+    name = models.CharField(max_length=50)
+    isolated = models.BooleanField(default=False)
+    protected = models.BooleanField(default=False)
+    field_orientation = models.IntegerField(default=0)
 
     def __str__(self):
         return self.name
@@ -22,7 +40,7 @@ class Bed(models.Model):
     """Model representing a bed planting."""
 
     name = models.CharField(max_length=50)
-    location = models.ForeignKey("beds.Location", null=True, on_delete=models.SET_NULL)
+    location = models.ForeignKey("beds.BedGroup", null=True, on_delete=models.SET_NULL)
     length = models.FloatField()
     width = models.FloatField()
 
