@@ -3,6 +3,6 @@ from django.contrib import admin
 from django.urls import path, include
 from bedplot.beds import views
 
-urlpatterns = [
-    path('beds/', views.bed_list, name='bed_list'),
-]
+urlpatterns = []
+
+urlpatterns += views.BedView.get_urls()

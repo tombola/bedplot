@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     "crispy_bootstrap5",
     "debug_toolbar",
     "django_extensions",
+    "neapolitan",
     # Local
     "bedplot.accounts",
     "bedplot.pages",

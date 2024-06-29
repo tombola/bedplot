@@ -26,3 +26,4 @@ urllib3==1.26.14
 whitenoise==6.6.0
 ruff==0.3.4
 django-extensions==3.2.3
+neapolitan==24.4

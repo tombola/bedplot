@@ -1,7 +1,13 @@
 from django.shortcuts import render
 from .models import Bed
+from neapolitan.views import CRUDView
 
 
-def bed_list(request):
-    beds = Bed.objects.all()
-    return render(request, 'beds/bed_list.html', {'beds': beds})
+class BedView(CRUDView):
+    model = Bed
+    fields = [
+        "name",
+        "location",
+        "length",
+        "width",
+    ]
