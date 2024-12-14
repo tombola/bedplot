@@ -5,4 +5,6 @@ from bedplot.beds import views
 
 urlpatterns = []
 
+urlpatterns += views.PlotView.get_urls()
+urlpatterns += views.BedGroupView.get_urls()
 urlpatterns += views.BedView.get_urls()
