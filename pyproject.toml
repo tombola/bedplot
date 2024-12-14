@@ -35,3 +35,9 @@ dependencies = [
     "urllib3>=2.2.3",
     "whitenoise>=6.8.2",
 ]
+
+[dependency-groups]
+dev = [
+    "import-linter>=2.1",
+    "pre-commit>=4.0.1",
+]

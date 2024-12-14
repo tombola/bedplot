@@ -1,6 +1,8 @@
 # OSX #
 .DS_Store
 
+/TODO.txt
+
 # Byte-compiled / optimized / DLL files #
 __pycache__/
 *.py[cod]
@@ -13,3 +15,4 @@ media
 
 # Virtual environment
 .venv
+/.envrc
