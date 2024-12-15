@@ -11,8 +11,10 @@ __pycache__/
 # Django #
 *.log
 db.sqlite3
+/*.db
 media
 
 # Virtual environment
 .venv
 /.envrc
+README.md

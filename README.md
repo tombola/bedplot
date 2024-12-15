@@ -1,8 +1,29 @@
+# BedPlot
+
+This project uses UV to manage dependencies and python version.
+
+Use `uv add PACKAGE_NAME` to add to both install and add to `pyproject.toml` and
+`uv.lock`.
+
+## Settings
+
+- `django-environs` - _because it handles db_url parsing, could switch to
+  environs_
+
+  - loads from `.env` if present
+  - parses and validates
+
+- `pytest-env`
+  - when running under test, sets environment variables from `pyproject.toml`
+    (overrides django-environs)
+
+# Based on DjangoX
+
+## 🚀 DjangoX Features
+
 > A batteries-included Django starter project. To learn more visit [LearnDjango.com](https://learndjango.com).
 
 https://github.com/wsvincent/djangox/assets/766418/a73ea730-a7b4-4e53-bf51-aa68f6816d6a
-
-## 🚀 Features
 
 - Django 5.0 & Python 3.12
 - Install via [Pip](https://pypi.org/project/pip/) or [Docker](https://www.docker.com/)
