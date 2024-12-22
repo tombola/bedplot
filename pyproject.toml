@@ -36,6 +36,7 @@ dependencies = [
     "urllib3>=2.2.3",
     "whitenoise>=6.8.2",
     "pytest-env>=1.1.5",
+    "svgwrite>=1.4.3",
 ]
 
 [dependency-groups]

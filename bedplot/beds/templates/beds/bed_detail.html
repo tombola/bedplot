@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>{{ object.name }}</h1>
+    <p>{{ object.location }}</p>
+    <p>{{ object.length }} x {{ object.width }}</p>
+
+    <p>{{ object.description }}</p>
+
+
+    <p><strong>Created at:</strong> {{ object.created_at }}</p>
+    <p><strong>Updated at:</strong> {{ object.updated_at }}</p>
+
+    <a href="{% url 'bed-update' object.id %}">Edit</a></br>
+    <a href="{% url 'bed-list' %}">Back to list</a>
+
+{% endblock %}

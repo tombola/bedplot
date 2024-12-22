@@ -41,8 +41,11 @@ class Bed(models.Model):
 
     name = models.CharField(max_length=50)
     location = models.ForeignKey("beds.BedGroup", null=True, on_delete=models.SET_NULL)
-    length = models.FloatField()
-    width = models.FloatField()
+    origin_x = models.FloatField(default=0)
+    origin_y = models.FloatField(default=0)
+
+    length = models.FloatField(help_text="Length of the bed in metres")
+    width = models.FloatField(help_text="Width of the bed in metres")
 
     def new_planting(
         self,
