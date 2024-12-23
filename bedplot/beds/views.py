@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Bed, Plot, BedGroup
 from neapolitan.views import CRUDView
 from django.http import HttpResponse
-from bedplot.beds.draw import draw_bed_group
+from bedplot.beds.draw import draw_bed_group, draw_bed_group2
 
 
 class PlotView(CRUDView):
@@ -35,5 +35,6 @@ class BedView(CRUDView):
 
 def bed_svg_view(request):
     beds = Bed.objects.all()
-    context = {"svg": draw_bed_group(beds).tostring()}
+    # context = {"svg": draw_bed_group(beds).tostring()}
+    context = {"svg": draw_bed_group2(beds).as_str()}
     return render(request, "beds/bed_svg.html", context)

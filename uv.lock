@@ -43,6 +43,7 @@ dependencies = [
     { name = "requests-oauthlib" },
     { name = "ruff" },
     { name = "sqlparse" },
+    { name = "svg-py" },
     { name = "svgwrite" },
     { name = "typing-extensions" },
     { name = "urllib3" },
@@ -87,6 +88,7 @@ requires-dist = [
     { name = "requests-oauthlib", specifier = ">=2.0.0" },
     { name = "ruff", specifier = ">=0.8.3" },
     { name = "sqlparse", specifier = ">=0.5.3" },
+    { name = "svg-py", specifier = ">=1.5.0" },
     { name = "svgwrite", specifier = ">=1.4.3" },
     { name = "typing-extensions", specifier = ">=4.12.2" },
     { name = "urllib3", specifier = ">=2.2.3" },
@@ -667,6 +669,15 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/e5/40/edede8dd6977b0d3da179a342c198ed100dd2aba4be081861ee5911e4da4/sqlparse-0.5.3.tar.gz", hash = "sha256:09f67787f56a0b16ecdbde1bfc7f5d9c3371ca683cfeaa8e6ff60b4807ec9272", size = 84999 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/a9/5c/bfd6bd0bf979426d405cc6e71eceb8701b148b16c21d2dc3c261efc61c7b/sqlparse-0.5.3-py3-none-any.whl", hash = "sha256:cf2196ed3418f3ba5de6af7e82c694a9fbdbfecccdfc72e281548517081f16ca", size = 44415 },
+]
+
+[[package]]
+name = "svg-py"
+version = "1.5.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/b9/6d/4680d284924d66082b39e7508b70346a8132c06a4bac497ef4d2c05430ec/svg_py-1.5.0.tar.gz", hash = "sha256:a036d0118176c2498601fab33b9b68dd9754e6a5fa12e4d36cce071b307b5c11", size = 40710 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/51/2b/a541bed029de9ac6a558d3eeeeb0fff5046687651e61d38df3dc43f48e2a/svg_py-1.5.0-py3-none-any.whl", hash = "sha256:5c467efd5a43e8df4dd6f6d078063f195a04966721d36c43d62f5d7529f908d1", size = 13443 },
 ]
 
 [[package]]

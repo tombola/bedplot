@@ -37,6 +37,7 @@ dependencies = [
     "whitenoise>=6.8.2",
     "pytest-env>=1.1.5",
     "svgwrite>=1.4.3",
+    "svg-py>=1.5.0",
 ]
 
 [dependency-groups]
