@@ -9,7 +9,7 @@ DOUBLE_ROW_ALIASES = ["left", "right"]
 TRIPLE_ROW_ALIASES = ["left", "centre", "right"]
 
 
-class Plot(models.Model):
+class Field(models.Model):
     """Model representing a plot of land."""
 
     name = models.CharField(max_length=50)

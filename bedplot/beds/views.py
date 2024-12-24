@@ -1,12 +1,12 @@
 from django.shortcuts import render
-from .models import Bed, Plot, BedGroup
+from .models import Bed, Field, BedGroup
 from neapolitan.views import CRUDView
 from django.http import HttpResponse
 from bedplot.beds.draw import draw_bed_group
 
 
-class PlotView(CRUDView):
-    model = Plot
+class FieldView(CRUDView):
+    model = Field
     fields = [
         "name",
         "compass_orientation",
