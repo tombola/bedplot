@@ -44,7 +44,6 @@ dependencies = [
     { name = "ruff" },
     { name = "sqlparse" },
     { name = "svg-py" },
-    { name = "svgwrite" },
     { name = "typing-extensions" },
     { name = "urllib3" },
     { name = "whitenoise" },
@@ -89,7 +88,6 @@ requires-dist = [
     { name = "ruff", specifier = ">=0.8.3" },
     { name = "sqlparse", specifier = ">=0.5.3" },
     { name = "svg-py", specifier = ">=1.5.0" },
-    { name = "svgwrite", specifier = ">=1.4.3" },
     { name = "typing-extensions", specifier = ">=4.12.2" },
     { name = "urllib3", specifier = ">=2.2.3" },
     { name = "whitenoise", specifier = ">=6.8.2" },
@@ -678,15 +676,6 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/b9/6d/4680d284924d66082b39e7508b70346a8132c06a4bac497ef4d2c05430ec/svg_py-1.5.0.tar.gz", hash = "sha256:a036d0118176c2498601fab33b9b68dd9754e6a5fa12e4d36cce071b307b5c11", size = 40710 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/51/2b/a541bed029de9ac6a558d3eeeeb0fff5046687651e61d38df3dc43f48e2a/svg_py-1.5.0-py3-none-any.whl", hash = "sha256:5c467efd5a43e8df4dd6f6d078063f195a04966721d36c43d62f5d7529f908d1", size = 13443 },
-]
-
-[[package]]
-name = "svgwrite"
-version = "1.4.3"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/16/c1/263d4e93b543390d86d8eb4fc23d9ce8a8d6efd146f9427364109004fa9b/svgwrite-1.4.3.zip", hash = "sha256:a8fbdfd4443302a6619a7f76bc937fc683daf2628d9b737c891ec08b8ce524c3", size = 189516 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/84/15/640e399579024a6875918839454025bb1d5f850bb70d96a11eabb644d11c/svgwrite-1.4.3-py3-none-any.whl", hash = "sha256:bb6b2b5450f1edbfa597d924f9ac2dd099e625562e492021d7dd614f65f8a22d", size = 67122 },
 ]
 
 [[package]]
