@@ -5,20 +5,28 @@ SCALE = 20
 PATH_WIDTH = 0.5
 
 
+def _s(dimension):
+    return dimension * SCALE
+
+
+def draw_bed(bed):
+    return (
+        svg.Rect(
+            x=_s(bed.origin_x),
+            y=_s(bed.origin_y),
+            width=_s(bed.width),
+            height=_s(bed.length),
+            fill="transparent",
+            stroke="black",
+        ),
+    )
+
+
 # # Draw bed group using svg.py
 def draw_bed_group(beds):
     elements = []
     for _x, bed in enumerate(beds):
-        elements += [
-            svg.Rect(
-                x=_x * bed.width * SCALE + _x * PATH_WIDTH * SCALE,
-                y=bed.origin_y,
-                width=bed.width * SCALE,
-                height=bed.length * SCALE,
-                fill="transparent",
-                stroke="black",
-            ),
-        ]
+        elements += [draw_bed(bed)]
 
     canvas = svg.SVG(
         width=DEFAULT_DRAWING_SIZE[0],
