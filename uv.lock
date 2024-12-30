@@ -24,6 +24,7 @@ dependencies = [
     { name = "defusedxml" },
     { name = "django" },
     { name = "django-allauth" },
+    { name = "django-click" },
     { name = "django-crispy-forms" },
     { name = "django-debug-toolbar" },
     { name = "django-environ" },
@@ -68,6 +69,7 @@ requires-dist = [
     { name = "defusedxml", specifier = ">=0.7.1" },
     { name = "django", specifier = ">=5.1.4" },
     { name = "django-allauth", specifier = ">=65.3.0" },
+    { name = "django-click", specifier = ">=2.4.0" },
     { name = "django-crispy-forms", specifier = ">=2.3" },
     { name = "django-debug-toolbar", specifier = ">=4.4.6" },
     { name = "django-environ", specifier = ">=0.11.2" },
@@ -271,6 +273,18 @@ dependencies = [
     { name = "django" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/72/ea/2362fa2566c43f2075e6c178970593d0b5aad63a98d351b0bc474942a7bd/django_allauth-65.3.0.tar.gz", hash = "sha256:92e0242724af03458b05b88c5fa798b01112ab22a86d873a8a9fd8f0ec57bbbf", size = 1546784 }
+
+[[package]]
+name = "django-click"
+version = "2.4.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "click" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/c3/22/6197a48b9facca10ecdb95a9341721cd7a89548b7464ed06d6c527348a35/django_click-2.4.0.tar.gz", hash = "sha256:ef935b611040d123b60e88eb2952c4838b4538b14d248114128fcccb4418685d", size = 9096 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a7/2b/295a2e4b5e7daef075cbb3b72bdbf3fe307fcb2c87213d2df8382fa039a7/django_click-2.4.0-py2.py3-none-any.whl", hash = "sha256:3c64a31cf25e54d3fccaea3af8d46d0b63511da2722e5888612aeee4d81e46d4", size = 7879 },
+]
 
 [[package]]
 name = "django-crispy-forms"
