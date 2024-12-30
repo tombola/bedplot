@@ -10,5 +10,6 @@ urlpatterns += views.BedGroupView.get_urls()
 urlpatterns += views.BedView.get_urls()
 
 urlpatterns += [
-    path("bed/plot", views.bed_svg_view, name="bed_svg_view"),
+    path("field/draw/<int:field_id>/", views.field_svg_view, name="field_svg_view"),
+    path("field/draw/", views.field_svg_view, name="field_svg_view"),
 ]

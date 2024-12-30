@@ -16,6 +16,9 @@ class FieldView(CRUDView):
 class BedGroupView(CRUDView):
     model = BedGroup
     fields = [
+        "field",
+        "field_x",
+        "field_y",
         "name",
         "isolated",
         "protected",
@@ -33,7 +36,8 @@ class BedView(CRUDView):
     ]
 
 
-def bed_svg_view(request):
-    beds = Bed.objects.all()
-    context = {"svg": draw_bed_group(beds).as_str()}
+def field_svg_view(request, field_id):
+    field = Field.objects.get(pk=field_id)
+    context = {"svg": draw_canvas([draw_field(field)]).as_str()}
+
     return render(request, "beds/bed_svg.html", context)

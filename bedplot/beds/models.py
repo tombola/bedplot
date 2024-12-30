@@ -34,6 +34,10 @@ class BedGroup(models.Model):
     orientation.
     """
 
+    field = models.ForeignKey("beds.Field", null=True, on_delete=models.SET_NULL)
+    field_x = models.FloatField(default=0)
+    field_y = models.FloatField(default=0)
+
     name = models.CharField(max_length=50)
     isolated = models.BooleanField(default=False)
     protected = models.BooleanField(default=False)
