@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load bed_tags %}
+
+{% block content %}
+<h1>{{ object.name }}</h1>
+    <p>{{ object.compass_orientation }}&deg; from north</p>
+    <a href="{% url 'field-list' %}">Back to list</a>
+    <a href="{% url 'field-update' object.id %}">Edit</a></br>
+    {% if object.bed_groups %}
+        {% for bedgroup in object.bed_groups %}
+            <a href="{% url 'bedgroup-update' bedgroup.id %}"><h2>{{ bedgroup.name }}</h2></a>
+            <p>{{ bedgroup.description }}</p>
+            {% for bed in bedgroup.beds.all %}
+                <a href="{% url 'bed-update' bed.id %}"><h3>{{ bed.name }}</h3></a>
+            {% endfor %}
+        {% endfor %}
+    {% endif %}
+{% endblock %}

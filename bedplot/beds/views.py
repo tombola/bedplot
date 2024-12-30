@@ -27,7 +27,7 @@ class BedView(CRUDView):
     model = Bed
     fields = [
         "name",
-        "location",
+        "bed_group",
         "length",
         "width",
     ]
