@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Bed, Field, BedGroup
 from neapolitan.views import CRUDView
 from django.http import HttpResponse
-from bedplot.beds.draw import draw_bed_group
+from bedplot.beds.draw import draw_bedgroup, draw_field, draw_canvas
 
 
 class FieldView(CRUDView):
@@ -27,7 +27,7 @@ class BedView(CRUDView):
     model = Bed
     fields = [
         "name",
-        "bed_group",
+        "bedgroup",
         "length",
         "width",
     ]

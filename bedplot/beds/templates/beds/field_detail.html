@@ -6,8 +6,8 @@
     <p>{{ object.compass_orientation }}&deg; from north</p>
     <a href="{% url 'field-list' %}">Back to list</a>
     <a href="{% url 'field-update' object.id %}">Edit</a></br>
-    {% if object.bed_groups %}
-        {% for bedgroup in object.bed_groups %}
+    {% if object.bedgroups %}
+        {% for bedgroup in object.bedgroups %}
             <a href="{% url 'bedgroup-update' bedgroup.id %}"><h2>{{ bedgroup.name }}</h2></a>
             <p>{{ bedgroup.description }}</p>
             {% for bed in bedgroup.beds.all %}

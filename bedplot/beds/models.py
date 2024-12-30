@@ -18,9 +18,12 @@ class Field(models.Model):
     def __str__(self):
         return self.name
 
+    def get_bedgroups(self):
+        return self.bedgroup_set.all()
+
     @property
-    def bed_groups(self):
-        return BedGroup.objects.all()
+    def bedgroups(self):
+        return self.get_bedgroups()
 
 
 class BedGroup(models.Model):
@@ -39,18 +42,21 @@ class BedGroup(models.Model):
     def __str__(self):
         return self.name
 
+    def get_beds(self):
+        return self.bed_set.all()
+
     @property
     def beds(self):
-        return self.bed_set.all()
+        return self.get_beds()
 
 
 class Bed(models.Model):
     """Model representing a bed planting."""
 
     name = models.CharField(max_length=50)
-    bed_group = models.ForeignKey("beds.BedGroup", null=True, on_delete=models.SET_NULL)
-    origin_x = models.FloatField(default=0)
-    origin_y = models.FloatField(default=0)
+    bedgroup = models.ForeignKey("beds.BedGroup", null=True, on_delete=models.SET_NULL)
+    bedgroup_x = models.FloatField(default=0)
+    bedgroup_y = models.FloatField(default=0)
 
     length = models.FloatField(help_text="Length of the bed in metres")
     width = models.FloatField(help_text="Width of the bed in metres")
@@ -100,7 +106,7 @@ class Bed(models.Model):
         return planting
 
     def __str__(self):
-        return f"{self.bed_group}: {self.name}"
+        return f"{self.bedgroup}: {self.name}"
 
 
 class Planting(models.Model):
