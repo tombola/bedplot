@@ -1,8 +1,14 @@
 import djclick as click
 from bedplot.beds.models import Bed, BedGroup, Field
+from rich import print
+from rich.table import Table
+from rich.console import Console
 
-@click.command()
+@click.group()
+def cli():
+    pass
 
+@cli.command()
 @click.option("--bed-name-suffix", default="", help="Suffix to add to bed names")
 @click.option("--bed-name-prefix", default="", help="Prefix to add to bed names")
 @click.option("--field-orientation", "-y", default=0, help="Y position (m) w")
@@ -14,13 +20,13 @@ from bedplot.beds.models import Bed, BedGroup, Field
 @click.argument("name", type=str)
 @click.argument("width", type=float)
 @click.argument("length", type=float)
-def command(name, width, length, num_beds, path_width, field_id, field_x, field_y, field_orientation, bed_name_prefix, bed_name_suffix):
+def create(name, width, length, num_beds, path_width, field_id, field_x, field_y, field_orientation, bed_name_prefix, bed_name_suffix):
     if field_id is None:
         field_instance = Field.objects.first()
     elif isinstance(field_id, int):
         field_instance = Field.objects.get(pk=field_id)
 
-    click.secho(f"Parameters:", fg='yellow')
+    click.secho("Parameters:", fg='yellow')
     click.secho(f"  name: {name}", fg='cyan')
     click.secho(f"  width: {width}m", fg='cyan')
     click.secho(f"  length: {length}m", fg='cyan')
@@ -67,3 +73,45 @@ def command(name, width, length, num_beds, path_width, field_id, field_x, field_
         )
         bed.save()
         click.secho(f"    Bed '{bed.id}:{bed_name}' created.", fg='green')
+
+
+@cli.command()
+@click.option("--field-id", "-fid", type=int, default=None, help="ID of field list beds for")
+def list(field_id):
+    if field_id is None:
+        field_instance = Field.objects.first()
+    elif isinstance(field_id, int):
+        field_instance = Field.objects.get(pk=field_id)
+
+    click.secho(f"BedGroups in Field '{field_instance.name}':", fg='yellow')
+
+    bedgroups = field_instance.bedgroups
+
+    console = Console()
+    table = Table(title=f"BedGroups in Field '{field_instance.name}'")
+
+    table.add_column("BedGroup ID", style="cyan", no_wrap=True)
+    table.add_column("BedGroup Name", style="cyan", no_wrap=True)
+    table.add_column("Bed Name", style="magenta")
+    table.add_column("X Position", style="green")
+    table.add_column("Y Position", style="green")
+    table.add_column("Length", style="blue")
+    table.add_column("Width", style="blue")
+
+    for bedgroup in bedgroups:
+        for bed in bedgroup.beds:
+            table.add_row(
+                str(bedgroup.id),
+                bedgroup.name,
+                bed.name,
+                str(bed.bedgroup_x),
+                str(bed.bedgroup_y),
+                str(bed.length),
+                str(bed.width),
+            )
+
+    console.print(table)
+
+
+if __name__ == "__main__":
+    cli()

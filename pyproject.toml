@@ -46,6 +46,7 @@ dev = [
     "pre-commit>=4.0.1",
     "pytest-django>=4.9.0",
     "pytest>=8.3.4",
+    "rich>=13.9.4",
 ]
 
 [tool.pytest_env]

@@ -22,8 +22,8 @@ class Field(models.Model):
         return self.bedgroup_set.all()
 
     @property
-    def bedgroups(self):
-        return self.get_bedgroups()
+    def bedgroups(self) -> list["BedGroup"]:
+        return list(self.get_bedgroups())
 
 
 class BedGroup(models.Model):
