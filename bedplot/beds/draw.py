@@ -30,6 +30,7 @@ def draw_bed(bed: Bed) -> svg.Rect:
             height=_s(bed.length),
             fill="transparent",
             stroke="black",
+            class_="bed",
         ),
     )
 
@@ -38,8 +39,9 @@ def draw_bedgroup(bedgroup: BedGroup) -> svg.G:
     elements = []
     for _x, bed in enumerate(bedgroup.beds):
         elements += [draw_bed(bed)]
+    elements += [svg.Text(text=bedgroup.name, x=10, y=20, class_='bedgroup-label')]
     field_transform = f"translate({_s(bedgroup.field_x)}, {_s(bedgroup.field_y)})"
-    return svg.G(elements=elements, transform=field_transform)
+    return svg.G(elements=elements, transform=field_transform, class_="bedgroup")
 
 
 def draw_field(field: Field) -> svg.G:

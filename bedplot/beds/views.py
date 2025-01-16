@@ -33,11 +33,16 @@ class BedView(CRUDView):
         "bedgroup",
         "length",
         "width",
+        "bedgroup_x",
+        "bedgroup_y",
     ]
 
 
-def field_svg_view(request, field_id):
-    field = Field.objects.get(pk=field_id)
+def field_svg_view(request, field_id=None):
+    if field_id is None:
+        field = Field.objects.first()
+    else:
+        field = Field.objects.get(pk=field_id)
     context = {"svg": draw_canvas([draw_field(field)]).as_str()}
 
     return render(request, "beds/bed_svg.html", context)

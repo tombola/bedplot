@@ -12,8 +12,8 @@ def cli():
 @click.option("--bed-name-suffix", default="", help="Suffix to add to bed names")
 @click.option("--bed-name-prefix", default="", help="Prefix to add to bed names")
 @click.option("--field-orientation", "-y", default=0, help="Y position (m) w")
-@click.option("--field-y", "-y", default=0, help="Y position (m) within field")
-@click.option("--field-x", "-x", default=0, help="X position (m) within field")
+@click.option("--field-y", "-y", default=0, type=float, help="Y position (m) within field")
+@click.option("--field-x", "-x", default=0, type=float, help="X position (m) within field")
 @click.option("--field-id", "-fid", type=int, default=None, help="ID of field to add beds to")
 @click.option("--path-width", "-p", default=0.5, help="Width of path between beds")
 @click.option("--num-beds", "-n", default=1, help="Number of beds to create")
@@ -76,7 +76,7 @@ def create(name, width, length, num_beds, path_width, field_id, field_x, field_y
 
 
 @cli.command()
-@click.option("--field-id", "-fid", type=int, default=None, help="ID of field list beds for")
+@click.option("--field-id", "-fid", type=int, default=None, help="ID of field list to beds for")
 def list(field_id):
     if field_id is None:
         field_instance = Field.objects.first()

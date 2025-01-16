@@ -58,7 +58,7 @@ class Bed(models.Model):
     """Model representing a bed planting."""
 
     name = models.CharField(max_length=50)
-    bedgroup = models.ForeignKey("beds.BedGroup", null=True, on_delete=models.SET_NULL)
+    bedgroup = models.ForeignKey("beds.BedGroup", null=True, on_delete=models.CASCADE)
     bedgroup_x = models.FloatField(default=0)
     bedgroup_y = models.FloatField(default=0)
 
