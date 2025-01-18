@@ -1,9 +1,0 @@
-{% extends "base.html" %}
-
-{% block content %}
-    <h1>Bed plot</h1>
-
-    <a href="{% url 'bed-list' %}">Back to list view</a>
-
-    <div>{{ svg | safe }}</div>
-{% endblock %}

@@ -31,8 +31,10 @@ def draw_bed(bed: Bed) -> svg.Rect:
             fill="transparent",
             stroke="black",
             class_="bed",
+            data={'bid': bed.id},
         ),
     )
+
 
 
 def draw_bedgroup(bedgroup: BedGroup) -> svg.G:
@@ -45,10 +47,18 @@ def draw_bedgroup(bedgroup: BedGroup) -> svg.G:
 
 
 def draw_field(field: Field) -> svg.G:
-    elements = []
+    elements = [draw_compass(field.compass_orientation)]
     bedgroups = field.bedgroups
     for _x, bedgroup in enumerate(bedgroups):
         elements += [draw_bedgroup(bedgroup)]
 
     # compass_transform = f"rotate({field.compass_orientation})"
     return svg.G(elements=elements, transform=None)
+
+
+def draw_compass(degrees):
+    return svg.G(elements=[
+        svg.Circle(cx=0, cy=0, r=50, fill="transparent", stroke="black", class_="compass",  elements=[]),
+        svg.Text(text="N", x=-6, y=-30, class_="compass"),
+        svg.Line(x1=0, y1=0, x2=0, y2=-50, stroke="red")
+    ], transform=f"translate(650, 51) rotate({-degrees})", class_="compass")

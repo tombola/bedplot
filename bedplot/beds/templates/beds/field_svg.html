@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="layout">
+    <div id="svgcanvas">
+        <h1>Bed plot</h1>
+
+        <a href="{% url 'bed-list' %}">Back to list view</a>
+
+        <div>{{ svg | safe }}</div>
+    </div>
+    {% comment %} <div id="bedoptions">
+        {% for bed in beds %}
+            <div class="bed-option" hx-get="{% url 'bed-detail' bed.id %}" hx-target="#sidebar" hx-swap="innerHTML">
+                {{ bed.name }}
+            </div>
+        {% endfor %}
+    </div> {% endcomment %}
+    <div id="sidebar">
+        <h2>Bed details</h2>
+        <p>Bed name: {{ bed.name }}</p>
+        <p>Bed length: {{ bed.length }}</p>
+        <p>Bed width: {{ bed.width }}</p>
+        <p>Bed height: {{ bed.height }}</p>
+        <p>Bed color: {{ bed.color }}</p>
+    </div>
+</div>
+{% endblock %}

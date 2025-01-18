@@ -41,3 +41,24 @@ body {
   fill: red;
 }
 .bed:hover {fill: aliceblue;}
+
+#layout {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  height: 100vh;
+
+}
+
+#svgcanvas {
+  grid-column: 1;
+  background-color: #ffffff;
+}
+#bedoptions {
+  grid-column: 1;
+  background-color: #ffffff;
+}
+
+#sidebar {
+  grid-column: 2;
+  background-color: #f0f0f0;
+}
