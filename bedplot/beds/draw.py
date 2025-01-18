@@ -1,6 +1,7 @@
 import svg
 from typing import List
 from bedplot.beds.models import Field, BedGroup, Bed
+from django.urls import reverse
 
 DEFAULT_DRAWING_SIZE = (1000, 1000)
 SCALE = 20
@@ -32,6 +33,7 @@ def draw_bed(bed: Bed) -> svg.Rect:
             stroke="black",
             class_="bed",
             data={'bid': bed.id},
+            attributes={'hx-get': reverse('bed-detail', args=[bed.id]), "hx-target": "#sidebar", "hx-swap": "innerHTML"},
         ),
     )
 

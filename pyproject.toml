@@ -36,8 +36,8 @@ dependencies = [
     "urllib3>=2.2.3",
     "whitenoise>=6.8.2",
     "pytest-env>=1.1.5",
-    "svg-py>=1.5.0",
     "django-click>=2.4.0",
+    "svg-py",
 ]
 
 [dependency-groups]
@@ -56,3 +56,6 @@ DATABASE_URL = "sqlite:///:memory:"
 
 [tool.ruff]
 line-length = 90
+
+[tool.uv.sources]
+svg-py = { git = "https://github.com/tombola/svg.py.git", rev = "allow-arbitrary-attributes" }
